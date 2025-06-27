@@ -1,11 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "hello-node.fullname" . }}
+  name: hello-node
   labels:
-    {{- include "hello-node.labels" . | nindent 4 }}
+    app: hello-node
 spec:
-  {{- if not .Values.autoscaling.enabled }}
+  
+  
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
